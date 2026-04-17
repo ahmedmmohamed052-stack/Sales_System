@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Preview the ForecastIQ Sales Insights dashboard — see exactly what monthly reports look like before you commit." />
+  <title>Dashboard Preview — ForecastIQ Sales Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+       ForecastIQ — Sales Insights Dashboard Preview
+       ═══════════════════════════════════════════════════════════════ */
+    :root {
+      --db-bg:       #09091F;
+      --db-bg2:      #0C0D26;
+      --db-card:     #0E1032;
+      --db-card2:    #111338;
+      --db-border:   rgba(100, 80, 220, 0.18);
+      --db-border2:  rgba(0, 200, 255, 0.15);
+      --db-purple:   #6B41DC;
+      --db-teal:     #13C48C;
+      --db-red:      #C04848;
+      --db-cyan:     #00D4FF;
+      --db-gold:     #F0A500;
+      --db-text0:    #FFFFFF;
+      --db-text1:    #C8D0E0;
+      --db-text2:    #7A85A0;
+      --db-text3:    #4A5468;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      background: var(--db-bg);
+      color: var(--db-text1);
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: rgba(107,65,220,0.3); color: #fff; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--db-bg); }
+    ::-webkit-scrollbar-thumb { background: rgba(107,65,220,0.35); border-radius: 10px; }
+
+    /* ── Demo Banner ─────────────────────────────────────────────── */
+    .demo-banner {
+      background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(64,112,255,0.08));
+      border-bottom: 1px solid rgba(0,212,255,0.2);
+      padding: 0.625rem 1.5rem;
+      text-align: center;
+      font-size: 0.8125rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .demo-banner strong { color: var(--db-cyan); }
+    .demo-banner a {
+      color: var(--db-cyan);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,212,255,0.3);
+      transition: border-color 0.2s;
+    }
+    .demo-banner a:hover { border-color: var(--db-cyan); }
+
+    /* ── Dashboard Header ────────────────────────────────────────── */
+    .db-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(9, 9, 31, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--db-border);
+      padding: 0 1.5rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .db-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      text-decoration: none;
+    }
+
+    .db-logo-icon {
+      width: 32px; height: 32px;
+      border-radius: 7px;
+      background: linear-gradient(135deg, #00D4FF, #4070FF);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .db-logo-text {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--db-cyan);
+    }
+
+    .db-header-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .db-month-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--db-text1);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--db-border);
+      border-radius: 8px;
+      padding: 0.375rem 0.875rem;
+    }
+
+    .db-month-pill .arrow { color: var(--db-cyan); font-size: 0.7rem; }
+
+    .db-back-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--db-text2);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--db-border);
+      border-radius: 8px;
+      padding: 0.375rem 1rem;
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      cursor: pointer;
+    }
+
+    .db-back-btn:hover {
+      color: var(--db-cyan);
+      border-color: rgba(0,212,255,0.3);
+      background: rgba(0,212,255,0.06);
+    }
+
+    /* ── Dashboard Body ──────────────────────────────────────────── */
+    .db-body {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.75rem 1.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ── KPI Cards Row ───────────────────────────────────────────── */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .kpi-card {
+      background: var(--db-card);
+      border: 1px solid var(--db-border);
+      border-radius: 12px;
+      padding: 1.25rem 1.375rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+      animation: fadeSlideUp 0.5s var(--ease-out) both;
+    }
+
+    .kpi-card:nth-child(1) { animation-delay: 0.05s; }
+    .kpi-card:nth-child(2) { animation-delay: 0.12s; }
+    .kpi-card:nth-child(3) { animation-delay: 0.19s; }
+    .kpi-card:nth-child(4) { animation-delay: 0.26s; }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, var(--db-purple), var(--db-cyan));
+      opacity: 0.6;
+    }
+
+    .kpi-card:hover {
+      border-color: rgba(107,65,220,0.35);
+      transform: translateY(-2px);
+    }
+
+    .kpi-card::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 60px; height: 60px;
+      border-radius: 0 12px 0 0;
+      border-top: 2px solid rgba(0,212,255,0.15);
+      border-right: 2px solid rgba(0,212,255,0.15);
+      pointer-events: none;
+    }
+
+    .kpi-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--db-text2);
+      margin-bottom: 0.625rem;
+    }
+
+    .kpi-value {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .kpi-value.negative { color: #ef4444; }
+    .kpi-value.positive { color: var(--db-cyan); }
+    .kpi-value.neutral  { color: var(--db-purple); }
+    .kpi-value.products { color: var(--db-gold); }
+
+    .kpi-sub {
+      font-size: 0.75rem;
+      color: var(--db-text3);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .kpi-sub .up   { color: var(--db-teal); }
+    .kpi-sub .down { color: var(--db-red); }
+
+    /* ── DB Panel ────────────────────────────────────────────────── */
+    .db-panel {
+      background: var(--db-card);
+      border: 1px solid var(--db-border);
+      border-radius: 14px;
+      overflow: hidden;
+      animation: fadeSlideUp 0.6s var(--ease-out) both;
+      position: relative;
+    }
+
+    .db-panel::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 80px; height: 80px;
+      border-radius: 0 0 14px 0;
+      border-bottom: 2px solid rgba(0,212,255,0.12);
+      border-right: 2px solid rgba(0,212,255,0.12);
+      pointer-events: none;
+    }
+
+    .db-panel-header {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--db-border);
+    }
+
+    .db-panel-icon {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--db-border);
+      font-size: 0.9375rem;
+      flex-shrink: 0;
+    }
+
+    .db-panel-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--db-text0);
+    }
+
+    .db-panel-body { padding: 1.5rem; }
+
+    /* ── Chart Panel ─────────────────────────────────────────────── */
+    .chart-panel { animation-delay: 0.1s; }
+
+    .chart-legend {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 1.25rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    .legend-item {
+      display: flex; align-items: center; gap: 0.4rem;
+      color: var(--db-text2);
+    }
+
+    .legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .legend-item.gainers { color: var(--db-teal); }
+    .legend-item.drops   { color: var(--db-red); }
+
+    .chart-annotations {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .chart-ann {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .chart-ann.gainer { color: var(--db-teal); }
+    .chart-ann.gainer::before { content: '▲ '; }
+    .chart-ann.drop   { color: var(--db-red); }
+    .chart-ann.drop::after  { content: ' ▼'; }
+
+    .chart-wrap {
+      position: relative;
+      height: 280px;
+    }
+
+    /* ── Top & Bottom Products ───────────────────────────────────── */
+    .topbot-panel { animation-delay: 0.2s; }
+
+    .topbot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 0;
+    }
+
+    .topbot-divider {
+      background: var(--db-border);
+      margin: 0;
+    }
+
+    .topbot-col { padding: 0 1.5rem; }
+    .topbot-col:first-child { padding-left: 0; }
+    .topbot-col:last-child  { padding-right: 0; }
+
+    .topbot-group-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.375rem;
+    }
+
+    .topbot-group-label.gainers { color: var(--db-teal); }
+    .topbot-group-label.gainers::before { content: '▲'; font-size: 0.625rem; }
+    .topbot-group-label.drops   { color: var(--db-red); }
+    .topbot-group-label.drops::before   { content: '▼'; font-size: 0.625rem; }
+
+    .topbot-list { display: flex; flex-direction: column; gap: 0; }
+
+    .topbot-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.2s;
+    }
+
+    .topbot-row:last-child { border-bottom: none; }
+    .topbot-row:hover { background: rgba(255,255,255,0.02); margin: 0 -0.5rem; padding: 0.75rem 0.5rem; border-radius: 6px; }
+
+    .topbot-product {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--db-text0);
+    }
+
+    .topbot-change {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .topbot-change.positive { color: var(--db-teal); }
+    .topbot-change.negative { color: var(--db-red); }
+
+    /* ── Purchase Recs ───────────────────────────────────────────── */
+    .recs-panel { animation-delay: 0.3s; }
+
+    .recs-list { display: flex; flex-direction: column; gap: 0.875rem; }
+
+    .rec-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 1.125rem 1.25rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .rec-card:hover {
+      border-color: rgba(107,65,220,0.2);
+      background: rgba(107,65,220,0.04);
+    }
+
+    .rec-card.buy-more { border-left: 2px solid var(--db-teal); }
+    .rec-card.buy-less  { border-left: 2px solid var(--db-red); }
+
+    .rec-icon {
+      width: 30px; height: 30px;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.875rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .rec-card.buy-more .rec-icon { background: rgba(19,196,140,0.12); border: 1px solid rgba(19,196,140,0.25); }
+    .rec-card.buy-less  .rec-icon { background: rgba(192,72,72,0.12); border: 1px solid rgba(192,72,72,0.25); }
+
+    .rec-content { flex: 1; min-width: 0; }
+
+    .rec-product {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--db-text0);
+      margin-bottom: 0.25rem;
+    }
+
+    .rec-desc {
+      font-size: 0.8125rem;
+      color: var(--db-text2);
+      line-height: 1.55;
+      margin-bottom: 0.625rem;
+    }
+
+    .rec-desc strong { color: var(--db-text1); }
+
+    .rec-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .rec-tag {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 0.1875rem 0.625rem;
+      border-radius: 100px;
+      border: 1px solid;
+    }
+
+    .rec-tag.positive {
+      color: var(--db-teal);
+      background: rgba(19,196,140,0.08);
+      border-color: rgba(19,196,140,0.25);
+    }
+
+    .rec-tag.negative {
+      color: var(--db-red);
+      background: rgba(192,72,72,0.08);
+      border-color: rgba(192,72,72,0.25);
+    }
+
+    /* ── Products Breakdown Table ────────────────────────────────── */
+    .table-panel { animation-delay: 0.4s; }
+
+    .db-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    .db-table thead tr {
+      border-bottom: 1px solid var(--db-border);
+    }
+
+    .db-table th {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--db-text3);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .db-table td {
+      padding: 0.875rem 1rem;
+      color: var(--db-text1);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .db-table tbody tr { transition: background 0.15s; }
+    .db-table tbody tr:hover { background: rgba(255,255,255,0.025); }
+    .db-table tbody tr:last-child td { border-bottom: none; }
+
+    .db-table td.product-id {
+      font-weight: 700;
+      color: var(--db-text0);
+    }
+
+    .db-table td.change-pos { color: var(--db-teal); font-weight: 700; }
+    .db-table td.change-neg { color: var(--db-red);  font-weight: 700; }
+
+    .trend-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      border: 1px solid;
+    }
+
+    .trend-badge.up {
+      color: var(--db-teal);
+      background: rgba(19,196,140,0.1);
+      border-color: rgba(19,196,140,0.25);
+    }
+
+    .trend-badge.down {
+      color: var(--db-red);
+      background: rgba(192,72,72,0.1);
+      border-color: rgba(192,72,72,0.25);
+    }
+
+    /* ── Bottom CTA Strip ────────────────────────────────────────── */
+    .db-cta-strip {
+      background: linear-gradient(135deg, rgba(0,212,255,0.06), rgba(64,112,255,0.06));
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 14px;
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      animation: fadeSlideUp 0.6s var(--ease-out) 0.5s both;
+    }
+
+    .db-cta-text h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--db-text0);
+      margin-bottom: 0.375rem;
+    }
+
+    .db-cta-text p {
+      font-size: 0.875rem;
+      color: var(--db-text2);
+    }
+
+    .db-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      background: linear-gradient(135deg, #00D4FF, #4070FF);
+      color: #fff;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(0,212,255,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+
+    .db-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,212,255,0.5);
+    }
+
+    /* ── Keyframes ───────────────────────────────────────────────── */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Responsive ──────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .topbot-grid { grid-template-columns: 1fr; }
+      .topbot-divider { display: none; }
+      .topbot-col { padding: 0; }
+      .topbot-col:last-child { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--db-border); }
+    }
+
+    @media (max-width: 540px) {
+      .kpi-row { grid-template-columns: 1fr 1fr; }
+      .db-header { padding: 0 1rem; }
+      .db-body { padding: 1.25rem 1rem 3rem; }
+      .db-cta-strip { flex-direction: column; text-align: center; }
+      .db-month-pill { display: none; }
+      .chart-annotations { padding: 0 0.5rem; }
+      .db-table th:nth-child(3),
+      .db-table td:nth-child(3),
+      .db-table th:nth-child(5),
+      .db-table td:nth-child(5) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Demo Banner ───────────────────────────────────────────── -->
+  <div class="demo-banner" role="banner" aria-label="Demo notice">
+    <strong>📊 Live Dashboard Preview</strong>
+    — This is a sample of what your monthly insights report looks like.
+    <a href="index.html#contact">Get yours built → start the free trial</a>
+  </div>
+
+  <!-- ── Header ────────────────────────────────────────────────── -->
+  <header class="db-header" role="banner">
+    <a href="index.html" class="db-logo" aria-label="ForecastIQ Home">
+      <div class="db-logo-icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 28 28" fill="none"><polyline points="4,20 10,13 16,16 24,7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="24" cy="7" r="2.5" fill="#F0A500"/></svg>
+      </div>
+      <span class="db-logo-text">Sales Insights</span>
+    </a>
+
+    <div class="db-header-right">
+      <div class="db-month-pill" aria-label="Report period: Month 7, Year 2025">
+        <span>7</span>
+        <span class="arrow">→</span>
+        <span>2025-04</span>
+      </div>
+      <a href="index.html" class="db-back-btn" aria-label="Back to ForecastIQ main page">
+        ← Back to Main Page
+      </a>
+    </div>
+  </header>
+
+  <!-- ── Dashboard Body ────────────────────────────────────────── -->
+  <main class="db-body" id="main-content">
+
+    <!-- KPI Cards -->
+    <div class="kpi-row" role="region" aria-label="Key performance indicators">
+
+      <div class="kpi-card" role="article" aria-label="Overall change metric">
+        <div class="kpi-label">Overall Change</div>
+        <div class="kpi-value negative" id="kpiChange">-6.4%</div>
+        <div class="kpi-sub">across all products</div>
+      </div>
+
+      <div class="kpi-card" role="article" aria-label="Historical units metric">
+        <div class="kpi-label">Historical Units</div>
+        <div class="kpi-value neutral" id="kpiHist">125</div>
+        <div class="kpi-sub">last 3 months</div>
+      </div>
+
+      <div class="kpi-card" role="article" aria-label="Forecast units metric">
+        <div class="kpi-label">Forecast Units</div>
+        <div class="kpi-value positive" id="kpiForecast">117</div>
+        <div class="kpi-sub">next 3 months</div>
+      </div>
+
+      <div class="kpi-card" role="article" aria-label="Products tracked metric">
+        <div class="kpi-label">Products</div>
+        <div class="kpi-value products" id="kpiProducts">5</div>
+        <div class="kpi-sub">
+          <span class="up">▲2 up</span>
+          <span class="down">▼3 down</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Historical vs Forecast Chart -->
+    <div class="db-panel chart-panel" role="region" aria-labelledby="chartPanelTitle">
+      <div class="db-panel-header">
+        <div class="db-panel-icon" aria-hidden="true">📊</div>
+        <h2 class="db-panel-title" id="chartPanelTitle">Historical vs Forecast — Avg Monthly Units</h2>
+      </div>
+      <div class="db-panel-body">
+        <div class="chart-legend" aria-label="Chart legend" role="list">
+          <div class="legend-item" role="listitem">
+            <div class="legend-dot" style="background:#6B41DC;" aria-hidden="true"></div>
+            Historical Avg (last 3mo)
+          </div>
+          <div class="legend-item gainers" role="listitem" aria-label="Top 5 gainers: teal bars">
+            <div class="legend-dot" style="background:#13C48C;" aria-hidden="true"></div>
+            Forecast Avg (next 3mo)
+          </div>
+          <div class="legend-item drops" role="listitem" aria-label="Top 5 drops: red bars">
+            <div class="legend-dot" style="background:#C04848;" aria-hidden="true"></div>
+            Forecast (drops)
+          </div>
+        </div>
+        <div class="chart-annotations" aria-hidden="true">
+          <span class="chart-ann gainer">Top 5 Gainers</span>
+          <span class="chart-ann drop">Top 5 Drops</span>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="forecastChart" role="img" aria-label="Grouped bar chart comparing historical and forecast average monthly units per product"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top & Bottom Products -->
+    <div class="db-panel topbot-panel" role="region" aria-labelledby="topbotTitle">
+      <div class="db-panel-header">
+        <div class="db-panel-icon" aria-hidden="true">🏆</div>
+        <h2 class="db-panel-title" id="topbotTitle">Top & Bottom Products</h2>
+      </div>
+      <div class="db-panel-body">
+        <div class="topbot-grid">
+
+          <div class="topbot-col">
+            <div class="topbot-group-label gainers">Biggest Gainers</div>
+            <ul class="topbot-list" role="list" aria-label="Biggest gainers">
+              <li class="topbot-row">
+                <span class="topbot-product">P003</span>
+                <span class="topbot-change positive">+10.6%</span>
+              </li>
+              <li class="topbot-row">
+                <span class="topbot-product">P005</span>
+                <span class="topbot-change positive">+5.2%</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="topbot-divider" aria-hidden="true"></div>
+
+          <div class="topbot-col">
+            <div class="topbot-group-label drops">Biggest Drops</div>
+            <ul class="topbot-list" role="list" aria-label="Biggest drops">
+              <li class="topbot-row">
+                <span class="topbot-product">P002</span>
+                <span class="topbot-change negative">-17.6%</span>
+              </li>
+              <li class="topbot-row">
+                <span class="topbot-product">P004</span>
+                <span class="topbot-change negative">-13.1%</span>
+              </li>
+              <li class="topbot-row">
+                <span class="topbot-product">P001</span>
+                <span class="topbot-change negative">-13.1%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Purchase Recommendations -->
+    <div class="db-panel recs-panel" role="region" aria-labelledby="recsTitle">
+      <div class="db-panel-header">
+        <div class="db-panel-icon" aria-hidden="true">🛒</div>
+        <h2 class="db-panel-title" id="recsTitle">Purchase Recommendations</h2>
+      </div>
+      <div class="db-panel-body">
+        <ul class="recs-list" role="list" aria-label="Purchase recommendations per product">
+
+          <li class="rec-card buy-more" role="listitem">
+            <div class="rec-icon" aria-hidden="true">📈</div>
+            <div class="rec-content">
+              <div class="rec-product">P003</div>
+              <p class="rec-desc">Buy more — demand is expected to increase. Order <strong>+1 additional unit/month</strong> above your usual quantity.</p>
+              <div class="rec-tags">
+                <span class="rec-tag positive">+1 units/mo</span>
+                <span class="rec-tag positive">+10.6% increase</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="rec-card buy-more" role="listitem">
+            <div class="rec-icon" aria-hidden="true">📈</div>
+            <div class="rec-content">
+              <div class="rec-product">P005</div>
+              <p class="rec-desc">Buy more — demand is expected to increase. Order <strong>+0.3 additional units/month</strong> above your usual quantity.</p>
+              <div class="rec-tags">
+                <span class="rec-tag positive">+0.3 units/mo</span>
+                <span class="rec-tag positive">+5.2% increase</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="rec-card buy-less" role="listitem">
+            <div class="rec-icon" aria-hidden="true">📉</div>
+            <div class="rec-content">
+              <div class="rec-product">P001</div>
+              <p class="rec-desc">Buy less — demand is expected to drop. Reduce orders by <strong>~1.3 units/month</strong> to avoid overstock.</p>
+              <div class="rec-tags">
+                <span class="rec-tag negative">-1.3 units/mo</span>
+                <span class="rec-tag negative">-13.1% decrease</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="rec-card buy-less" role="listitem">
+            <div class="rec-icon" aria-hidden="true">📉</div>
+            <div class="rec-content">
+              <div class="rec-product">P004</div>
+              <p class="rec-desc">Buy less — demand is expected to drop. Reduce orders by <strong>~1.3 units/month</strong> to avoid overstock.</p>
+              <div class="rec-tags">
+                <span class="rec-tag negative">-1.3 units/mo</span>
+                <span class="rec-tag negative">-13.1% decrease</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="rec-card buy-less" role="listitem">
+            <div class="rec-icon" aria-hidden="true">📉</div>
+            <div class="rec-content">
+              <div class="rec-product">P002</div>
+              <p class="rec-desc">Buy less — demand is expected to drop. Reduce orders by <strong>~1.4 units/month</strong> to avoid overstock.</p>
+              <div class="rec-tags">
+                <span class="rec-tag negative">-1.4 units/mo</span>
+                <span class="rec-tag negative">-17.6% decrease</span>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <!-- All Products Breakdown Table -->
+    <div class="db-panel table-panel" role="region" aria-labelledby="tableTitle">
+      <div class="db-panel-header">
+        <div class="db-panel-icon" aria-hidden="true">📋</div>
+        <h2 class="db-panel-title" id="tableTitle">All Products Breakdown</h2>
+      </div>
+      <div class="db-panel-body" style="padding: 0;">
+        <div style="overflow-x: auto;">
+          <table class="db-table" aria-label="Full product breakdown with historical and forecast data">
+            <thead>
+              <tr>
+                <th scope="col">Product ID</th>
+                <th scope="col">Hist. Total</th>
+                <th scope="col">Hist. Avg/mo</th>
+                <th scope="col">Forecast Total</th>
+                <th scope="col">Forecast Avg/mo</th>
+                <th scope="col">Change</th>
+                <th scope="col">Trend</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="product-id">P003</td>
+                <td>27</td>
+                <td>9</td>
+                <td>30</td>
+                <td>10</td>
+                <td class="change-pos">+10.6%</td>
+                <td><span class="trend-badge up">▲ Increase</span></td>
+              </tr>
+              <tr>
+                <td class="product-id">P005</td>
+                <td>13</td>
+                <td>4.3</td>
+                <td>14</td>
+                <td>4.6</td>
+                <td class="change-pos">+5.2%</td>
+                <td><span class="trend-badge up">▲ Increase</span></td>
+              </tr>
+              <tr>
+                <td class="product-id">P001</td>
+                <td>31</td>
+                <td>10.3</td>
+                <td>27</td>
+                <td>9</td>
+                <td class="change-neg">-13.1%</td>
+                <td><span class="trend-badge down">▼ Decrease</span></td>
+              </tr>
+              <tr>
+                <td class="product-id">P004</td>
+                <td>29</td>
+                <td>9.7</td>
+                <td>25</td>
+                <td>8.4</td>
+                <td class="change-neg">-13.1%</td>
+                <td><span class="trend-badge down">▼ Decrease</span></td>
+              </tr>
+              <tr>
+                <td class="product-id">P002</td>
+                <td>25</td>
+                <td>8.3</td>
+                <td>21</td>
+                <td>6.9</td>
+                <td class="change-neg">-17.6%</td>
+                <td><span class="trend-badge down">▼ Decrease</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Strip -->
+    <div class="db-cta-strip" role="complementary" aria-label="Call to action">
+      <div class="db-cta-text">
+        <h3>This is what your store's data would look like.</h3>
+        <p>The first month is free — no commitment, no risk. Get your real report built on your actual sales data.</p>
+      </div>
+      <a href="index.html#contact" class="db-cta-btn" id="dashboardCtaBtn">
+        Start My Free Trial →
+      </a>
+    </div>
+
+  </main>
+
+  <script>
+  (function() {
+    'use strict';
+
+    /* ── Chart.js — Historical vs Forecast Grouped Bar ──────────── */
+    const ctx = document.getElementById('forecastChart').getContext('2d');
+
+    // Custom dashed-line divider plugin
+    const dividerPlugin = {
+      id: 'gainersDropsDivider',
+      afterDraw(chart) {
+        const { ctx: c, chartArea, scales } = chart;
+        // Get x pixel midpoint between index 1 (P005) and 2 (P002)
+        const x1 = scales.x.getPixelForValue(1);
+        const x2 = scales.x.getPixelForValue(2);
+        const divX = (x1 + x2) / 2;
+
+        c.save();
+        c.beginPath();
+        c.setLineDash([5, 4]);
+        c.strokeStyle = 'rgba(255,255,255,0.18)';
+        c.lineWidth = 1.2;
+        c.moveTo(divX, chartArea.top - 4);
+        c.lineTo(divX, chartArea.bottom);
+        c.stroke();
+        c.setLineDash([]);
+        c.restore();
+      }
+    };
+
+    new Chart(ctx, {
+      type: 'bar',
+      plugins: [dividerPlugin],
+      data: {
+        labels: ['P003', 'P005', 'P002', 'P004', 'P001'],
+        datasets: [
+          {
+            label: 'Historical Avg (last 3mo)',
+            data: [9, 4.3, 8.3, 9.7, 10.3],
+            backgroundColor: 'rgba(107, 65, 220, 0.82)',
+            borderColor: 'rgba(107, 65, 220, 0)',
+            borderWidth: 0,
+            borderRadius: 4,
+            borderSkipped: false,
+          },
+          {
+            label: 'Forecast Avg (next 3mo)',
+            data: [10, 4.6, 6.9, 8.4, 9],
+            backgroundColor: [
+              'rgba(19, 196, 140, 0.82)',
+              'rgba(19, 196, 140, 0.82)',
+              'rgba(192,  72,  72, 0.82)',
+              'rgba(192,  72,  72, 0.82)',
+              'rgba(192,  72,  72, 0.82)',
+            ],
+            borderColor: 'transparent',
+            borderWidth: 0,
+            borderRadius: 4,
+            borderSkipped: false,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: 'rgba(14, 16, 50, 0.95)',
+            borderColor: 'rgba(107, 65, 220, 0.3)',
+            borderWidth: 1,
+            titleColor: '#fff',
+            bodyColor: '#94A3B8',
+            titleFont: { family: 'Rajdhani', size: 13, weight: '700' },
+            bodyFont: { family: 'Rajdhani', size: 12 },
+            padding: 12,
+            cornerRadius: 8,
+            callbacks: {
+              label: function(ctx) {
+                return ` ${ctx.dataset.label}: ${ctx.raw} units/mo`;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: 'rgba(255,255,255,0.04)', drawBorder: false },
+            ticks: {
+              color: '#7A85A0',
+              font: { family: 'Rajdhani', size: 11, weight: '600' },
+              letterSpacing: '0.08em',
+            },
+            border: { color: 'rgba(255,255,255,0.06)' }
+          },
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(255,255,255,0.05)', drawBorder: false },
+            ticks: {
+              color: '#7A85A0',
+              font: { family: 'Rajdhani', size: 11 },
+              stepSize: 2,
+            },
+            border: { color: 'transparent', dash: [4, 4] }
+          }
+        },
+        animation: {
+          duration: 1000,
+          easing: 'easeOutQuart'
+        }
+      }
+    });
+
+  })();
+  </script>
+</body>
+</html>
