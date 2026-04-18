@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,13 +40,13 @@
       </button>
 
       <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="#features" class="nav-link">Features</a></li>
-        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
-        <li><a href="pain.html" class="nav-link">Sound Familiar?</a></li>
-        <li><a href="dashboard-preview.html" class="nav-link">Live Demo</a></li>
-        <li><a href="#trial" class="nav-link">Free Trial</a></li>
+        <li><a href="#features" class="nav-link" data-i18n="nav.features">Features</a></li>
+        <li><a href="#how-it-works" class="nav-link" data-i18n="nav.howItWorks">How It Works</a></li>
+        <li><a href="pain.html" class="nav-link" data-i18n="nav.soundFamiliar">Sound Familiar?</a></li>
+        <li><a href="dashboard-preview.html" class="nav-link" data-i18n="nav.liveDemo">Live Demo</a></li>
+        <li><a href="#trial" class="nav-link" data-i18n="nav.freeTrial">Free Trial</a></li>
         <li>
-          <a href="#contact" class="nav-cta" id="navCtaBtn">Get Started</a>
+          <a href="#contact" class="nav-cta" id="navCtaBtn" data-i18n="nav.getStarted">Get Started</a>
         </li>
       </ul>
     </div>
@@ -60,25 +60,25 @@
     <div class="hero-content">
       <div class="hero-badge reveal-fade" data-delay="0">
         <span class="badge-dot" aria-hidden="true"></span>
-        AI-Powered · Store-Specific · Self-Improving
+        <span data-i18n="hero.badge">AI-Powered · Store-Specific · Self-Improving</span>
       </div>
 
       <h1 class="hero-headline reveal-fade" data-delay="100">
-        Stop Guessing.<br />
-        <span class="gradient-text">Start Forecasting.</span>
+        <span data-i18n="hero.headline1">Stop Guessing.</span><br />
+        <span class="gradient-text" data-i18n="hero.headline2">Start Forecasting.</span>
       </h1>
 
-      <p class="hero-sub reveal-fade" data-delay="200">
+      <p class="hero-sub reveal-fade" data-delay="200" data-i18n="hero.sub">
         An AI model trained <em>exclusively on your store's data</em> — delivering accurate sales predictions,
         inventory clarity, and monthly insights so you always know what's coming.
       </p>
 
       <div class="hero-actions reveal-fade" data-delay="300">
         <a href="#contact" class="btn-primary" id="heroCtaBtn">
-          <span>Get Your Store Forecasted</span>
+          <span data-i18n="hero.cta1">Get Your Store Forecasted</span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="#how-it-works" class="btn-ghost">
+        <a href="#how-it-works" class="btn-ghost" data-i18n="hero.cta2">
           See How It Works
         </a>
       </div>
@@ -86,23 +86,23 @@
       <div class="hero-stats reveal-fade" data-delay="400">
         <div class="stat-item">
           <span class="stat-number" data-count="100">0</span><span class="stat-unit">%</span>
-          <span class="stat-label">Your Data Only</span>
+          <span class="stat-label" data-i18n="hero.stat1.label">Your Data Only</span>
         </div>
         <div class="stat-divider" aria-hidden="true"></div>
         <div class="stat-item">
           <span class="stat-number" data-count="12">0</span><span class="stat-unit">mo</span>
-          <span class="stat-label">Auto-Retraining Cycle</span>
+          <span class="stat-label" data-i18n="hero.stat2.label">Auto-Retraining Cycle</span>
         </div>
         <div class="stat-divider" aria-hidden="true"></div>
         <div class="stat-item">
           <span class="stat-number" data-count="1">0</span><span class="stat-unit"></span>
-          <span class="stat-label">Person to Contact</span>
+          <span class="stat-label" data-i18n="hero.stat3.label">Person to Contact</span>
         </div>
       </div>
     </div>
 
     <div class="hero-scroll-hint" aria-hidden="true">
-      <span>Scroll</span>
+      <span data-i18n="hero.scroll">Scroll</span>
       <svg width="16" height="20" viewBox="0 0 16 20" fill="none"><rect x="3" y="1" width="10" height="16" rx="5" stroke="#94A3B8" stroke-width="1.5"/><circle cx="8" cy="5" r="1.5" fill="#00D4FF" class="scroll-dot"/></svg>
     </div>
   </section>
@@ -110,11 +110,11 @@
   <!-- ═══════════════════════════════════════════════ FEATURES ════ -->
   <section id="features" aria-labelledby="featuresTitle">
     <div class="section-container">
-      <div class="section-eyebrow reveal-fade">What The System Does</div>
+      <div class="section-eyebrow reveal-fade" data-i18n="features.eyebrow">What The System Does</div>
       <h2 class="section-title reveal-fade" id="featuresTitle">
-        Every Insight You Need,<br /><span class="gradient-text">Delivered Automatically</span>
+        <span data-i18n="features.title1">Every Insight You Need,</span><br /><span class="gradient-text" data-i18n="features.title2">Delivered Automatically</span>
       </h2>
-      <p class="section-sub reveal-fade">
+      <p class="section-sub reveal-fade" data-i18n="features.sub">
         No dashboards to learn. No complex tools. Just clear outputs from an AI model
         that understands your products, your seasons, and your customers.
       </p>
@@ -125,64 +125,64 @@
           <div class="feature-icon-wrap" style="--icon-color: #00D4FF;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="1,17 9,9 13,13 23,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="17,3 23,3 23,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3 class="feature-title">Sales Forecasting</h3>
-          <p class="feature-desc">Accurate predictions of future sales volumes by product, category, and time period — so you always know what's coming before it arrives.</p>
+          <h3 class="feature-title" data-i18n="feat1.title">Sales Forecasting</h3>
+          <p class="feature-desc" data-i18n="feat1.desc">Accurate predictions of future sales volumes by product, category, and time period — so you always know what's coming before it arrives.</p>
         </div>
 
         <div class="feature-card reveal-scale" data-delay="80">
           <div class="feature-icon-wrap" style="--icon-color: #F0A500;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3 class="feature-title">Top & Bottom 5 Products</h3>
-          <p class="feature-desc">Know exactly which products are your revenue drivers and which are dead weight — every single month, ranked and explained.</p>
+          <h3 class="feature-title" data-i18n="feat2.title">Top & Bottom 5 Products</h3>
+          <p class="feature-desc" data-i18n="feat2.desc">Know exactly which products are your revenue drivers and which are dead weight — every single month, ranked and explained.</p>
         </div>
 
         <div class="feature-card reveal-scale" data-delay="160">
           <div class="feature-icon-wrap" style="--icon-color: #4070FF;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="3.27,6.96 12,12.01 20.73,6.96" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="22.08" x2="12" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
-          <h3 class="feature-title">Quantity Recommendations</h3>
-          <p class="feature-desc">Know exactly how much of each product to order and when. Never overstock slow movers or run out of your best sellers again.</p>
+          <h3 class="feature-title" data-i18n="feat3.title">Quantity Recommendations</h3>
+          <p class="feature-desc" data-i18n="feat3.desc">Know exactly how much of each product to order and when. Never overstock slow movers or run out of your best sellers again.</p>
         </div>
 
         <div class="feature-card reveal-scale" data-delay="0">
           <div class="feature-icon-wrap" style="--icon-color: #00FFB3;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
-          <h3 class="feature-title">Monthly Insight Reports</h3>
-          <p class="feature-desc">A detailed, human-readable report delivered every month — covering performance, forecasts, and actionable recommendations tailored to your store.</p>
+          <h3 class="feature-title" data-i18n="feat4.title">Monthly Insight Reports</h3>
+          <p class="feature-desc" data-i18n="feat4.desc">A detailed, human-readable report delivered every month — covering performance, forecasts, and actionable recommendations tailored to your store.</p>
         </div>
 
         <div class="feature-card reveal-scale" data-delay="80">
           <div class="feature-icon-wrap" style="--icon-color: #C084FC;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="1,4 1,10 7,10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3 class="feature-title">Automatic Monthly Retraining</h3>
-          <p class="feature-desc">The model learns from new data every month — improving its accuracy over time without any intervention from you. It gets smarter as your business evolves.</p>
+          <h3 class="feature-title" data-i18n="feat5.title">Automatic Monthly Retraining</h3>
+          <p class="feature-desc" data-i18n="feat5.desc">The model learns from new data every month — improving its accuracy over time without any intervention from you. It gets smarter as your business evolves.</p>
         </div>
 
         <div class="feature-card reveal-scale" data-delay="160">
           <div class="feature-icon-wrap" style="--icon-color: #FB923C;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3 class="feature-title">Seasonal Intelligence</h3>
-          <p class="feature-desc">Detect hidden seasonal patterns across your product catalog. Plan for peaks before they hit and avoid over-purchasing during slow periods.</p>
+          <h3 class="feature-title" data-i18n="feat6.title">Seasonal Intelligence</h3>
+          <p class="feature-desc" data-i18n="feat6.desc">Detect hidden seasonal patterns across your product catalog. Plan for peaks before they hit and avoid over-purchasing during slow periods.</p>
         </div>
 
         <div class="feature-card reveal-scale" data-delay="0">
           <div class="feature-icon-wrap" style="--icon-color: #34D399;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
-          <h3 class="feature-title">Demand Forecasting</h3>
-          <p class="feature-desc">Anticipate customer demand before it happens. Stock what will sell, reduce waste, and always have the right products at the right time.</p>
+          <h3 class="feature-title" data-i18n="feat7.title">Demand Forecasting</h3>
+          <p class="feature-desc" data-i18n="feat7.desc">Anticipate customer demand before it happens. Stock what will sell, reduce waste, and always have the right products at the right time.</p>
         </div>
 
         <div class="feature-card reveal-scale" data-delay="80">
           <div class="feature-icon-wrap" style="--icon-color: #F472B6;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3 class="feature-title">Store-Specific Model</h3>
-          <p class="feature-desc">Unlike generic tools, your model is trained exclusively on YOUR historical data — making it far more accurate for your unique product mix and customer base.</p>
+          <h3 class="feature-title" data-i18n="feat8.title">Store-Specific Model</h3>
+          <p class="feature-desc" data-i18n="feat8.desc">Unlike generic tools, your model is trained exclusively on YOUR historical data — making it far more accurate for your unique product mix and customer base.</p>
         </div>
 
       </div>
@@ -192,11 +192,11 @@
   <!-- ═══════════════════════════════════════ HOW IT WORKS ════════ -->
   <section id="how-it-works" aria-labelledby="howTitle">
     <div class="section-container">
-      <div class="section-eyebrow reveal-fade">Simple Process</div>
+      <div class="section-eyebrow reveal-fade" data-i18n="how.eyebrow">Simple Process</div>
       <h2 class="section-title reveal-fade" id="howTitle">
-        From Raw Data to<br /><span class="gradient-text">Real Clarity</span>
+        <span data-i18n="how.title1">From Raw Data to</span><br /><span class="gradient-text" data-i18n="how.title2">Real Clarity</span>
       </h2>
-      <p class="section-sub reveal-fade">
+      <p class="section-sub reveal-fade" data-i18n="how.sub">
         No technical knowledge required. You send data, I handle everything — 
         and you receive actionable insights every month.
       </p>
@@ -210,8 +210,8 @@
             <div class="step-icon-wrap" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <h3 class="step-title">You Send Your Sales Data</h3>
-            <p class="step-desc">Export your historical sales data from Shopify, WooCommerce, or any platform. A simple spreadsheet is all we need — I take it from there.</p>
+            <h3 class="step-title" data-i18n="step1.title">You Send Your Sales Data</h3>
+            <p class="step-desc" data-i18n="step1.desc">Export your historical sales data from Shopify, WooCommerce, or any platform. A simple spreadsheet is all we need — I take it from there.</p>
           </div>
         </div>
 
@@ -221,8 +221,8 @@
             <div class="step-icon-wrap" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
             </div>
-            <h3 class="step-title">Your AI Model Gets Trained</h3>
-            <p class="step-desc">A machine learning model is built from scratch, trained exclusively on your store's data. No shared models, no generic patterns — just your store, your numbers.</p>
+            <h3 class="step-title" data-i18n="step2.title">Your AI Model Gets Trained</h3>
+            <p class="step-desc" data-i18n="step2.desc">A machine learning model is built from scratch, trained exclusively on your store's data. No shared models, no generic patterns — just your store, your numbers.</p>
           </div>
         </div>
 
@@ -232,8 +232,8 @@
             <div class="step-icon-wrap" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/><line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </div>
-            <h3 class="step-title">You Receive Your Forecast Report</h3>
-            <p class="step-desc">A detailed monthly report lands in your inbox — covering sales forecasts, top products, quantity recommendations, and clear decisions you should make this month.</p>
+            <h3 class="step-title" data-i18n="step3.title">You Receive Your Forecast Report</h3>
+            <p class="step-desc" data-i18n="step3.desc">A detailed monthly report lands in your inbox — covering sales forecasts, top products, quantity recommendations, and clear decisions you should make this month.</p>
           </div>
         </div>
 
@@ -243,8 +243,8 @@
             <div class="step-icon-wrap" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><polyline points="1,4 1,10 7,10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <h3 class="step-title">The Model Improves Every Month</h3>
-            <p class="step-desc">As new sales data flows in, the model automatically retrains — becoming more accurate every cycle. Your forecasts improve as your business grows.</p>
+            <h3 class="step-title" data-i18n="step4.title">The Model Improves Every Month</h3>
+            <p class="step-desc" data-i18n="step4.desc">As new sales data flows in, the model automatically retrains — becoming more accurate every cycle. Your forecasts improve as your business grows.</p>
           </div>
         </div>
 
@@ -255,11 +255,11 @@
   <!-- ═══════════════════════════════════════ DECISIONS ═══════════ -->
   <section id="decisions" aria-labelledby="decisionsTitle">
     <div class="section-container">
-      <div class="section-eyebrow reveal-fade">Business Impact</div>
+      <div class="section-eyebrow reveal-fade" data-i18n="decisions.eyebrow">Business Impact</div>
       <h2 class="section-title reveal-fade" id="decisionsTitle">
-        Decisions You'll Make<br /><span class="gradient-text">With Confidence</span>
+        <span data-i18n="decisions.title1">Decisions You'll Make</span><br /><span class="gradient-text" data-i18n="decisions.title2">With Confidence</span>
       </h2>
-      <p class="section-sub reveal-fade">
+      <p class="section-sub reveal-fade" data-i18n="decisions.sub">
         Every output is designed to drive a real business decision — not just interesting data for a dashboard no one checks.
       </p>
 
@@ -269,48 +269,48 @@
           <div class="decision-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3 class="decision-title">Inventory & Purchasing</h3>
-          <p class="decision-desc">Order the exact right quantities — nothing more, nothing less. Eliminate overstock and stockouts at the same time.</p>
+          <h3 class="decision-title" data-i18n="dec1.title">Inventory & Purchasing</h3>
+          <p class="decision-desc" data-i18n="dec1.desc">Order the exact right quantities — nothing more, nothing less. Eliminate overstock and stockouts at the same time.</p>
         </div>
 
         <div class="decision-card reveal-scale" data-delay="80">
           <div class="decision-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><line x1="12" y1="8" x2="12" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="16" x2="12.01" y2="16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
           </div>
-          <h3 class="decision-title">Pricing & Promotions</h3>
-          <p class="decision-desc">Time your discounts and promotions perfectly — promote what's predicted to slow and capitalize on incoming demand peaks.</p>
+          <h3 class="decision-title" data-i18n="dec2.title">Pricing & Promotions</h3>
+          <p class="decision-desc" data-i18n="dec2.desc">Time your discounts and promotions perfectly — promote what's predicted to slow and capitalize on incoming demand peaks.</p>
         </div>
 
         <div class="decision-card reveal-scale" data-delay="160">
           <div class="decision-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3 class="decision-title">Seasonal Planning</h3>
-          <p class="decision-desc">Enter every season fully prepared — know which products will spike and how much buffer stock to carry before the rush hits.</p>
+          <h3 class="decision-title" data-i18n="dec3.title">Seasonal Planning</h3>
+          <p class="decision-desc" data-i18n="dec3.desc">Enter every season fully prepared — know which products will spike and how much buffer stock to carry before the rush hits.</p>
         </div>
 
         <div class="decision-card reveal-scale" data-delay="0">
           <div class="decision-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg>
           </div>
-          <h3 class="decision-title">Supplier Negotiations</h3>
-          <p class="decision-desc">Approach suppliers with data-backed volume projections. Lock in better pricing and lead times when you know exactly what you'll need months ahead.</p>
+          <h3 class="decision-title" data-i18n="dec4.title">Supplier Negotiations</h3>
+          <p class="decision-desc" data-i18n="dec4.desc">Approach suppliers with data-backed volume projections. Lock in better pricing and lead times when you know exactly what you'll need months ahead.</p>
         </div>
 
         <div class="decision-card reveal-scale" data-delay="80">
           <div class="decision-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
-          <h3 class="decision-title">Cash Flow & Financing</h3>
-          <p class="decision-desc">Plan your capital and credit needs before the month starts. Know when revenue will be high and when to hold back on spending.</p>
+          <h3 class="decision-title" data-i18n="dec5.title">Cash Flow & Financing</h3>
+          <p class="decision-desc" data-i18n="dec5.desc">Plan your capital and credit needs before the month starts. Know when revenue will be high and when to hold back on spending.</p>
         </div>
 
         <div class="decision-card reveal-scale" data-delay="160">
           <div class="decision-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3 class="decision-title">Marketing Budget</h3>
-          <p class="decision-desc">Spend your ad budget where data says demand is coming — amplify growth for rising products and cut waste on slow movers before it costs you.</p>
+          <h3 class="decision-title" data-i18n="dec6.title">Marketing Budget</h3>
+          <p class="decision-desc" data-i18n="dec6.desc">Spend your ad budget where data says demand is coming — amplify growth for rising products and cut waste on slow movers before it costs you.</p>
         </div>
 
       </div>
@@ -322,17 +322,17 @@
     <div class="section-container">
       <div class="why-inner">
         <div class="why-left reveal-fade">
-          <div class="section-eyebrow">Why This Is Different</div>
+          <div class="section-eyebrow" data-i18n="why.eyebrow">Why This Is Different</div>
           <h2 class="section-title" id="whyTitle">
-            Not Another<br /><span class="gradient-text">Generic Tool</span>
+            <span data-i18n="why.title1">Not Another</span><br /><span class="gradient-text" data-i18n="why.title2">Generic Tool</span>
           </h2>
-          <p class="section-sub" style="text-align:left; max-width: 480px;">
+          <p class="section-sub" style="text-align:left; max-width: 480px;" data-i18n="why.sub">
             The market is flooded with one-size-fits-all analytics platforms. This is not that.
             This is a purpose-built system for your store, and your store alone.
           </p>
 
           <a href="#contact" class="btn-primary" style="margin-top: 2rem; display:inline-flex;">
-            <span>Work Directly With Me</span>
+            <span data-i18n="why.cta">Work Directly With Me</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
@@ -343,8 +343,8 @@
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <div class="diff-text">
-              <strong>Your model trains only on YOUR data</strong>
-              <p>No industry averages. No shared training sets. No competitors' patterns polluting your forecasts. Pure signal from your own store.</p>
+              <strong data-i18n="diff1.title">Your model trains only on YOUR data</strong>
+              <p data-i18n="diff1.desc">No industry averages. No shared training sets. No competitors' patterns polluting your forecasts. Pure signal from your own store.</p>
             </div>
           </div>
 
@@ -353,8 +353,8 @@
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <div class="diff-text">
-              <strong>One person to contact — direct line, always</strong>
-              <p>No support tickets. No chatbot. No escalation queue. You talk directly to the person who built your system and understands it completely.</p>
+              <strong data-i18n="diff2.title">One person to contact — direct line, always</strong>
+              <p data-i18n="diff2.desc">No support tickets. No chatbot. No escalation queue. You talk directly to the person who built your system and understands it completely.</p>
             </div>
           </div>
 
@@ -363,8 +363,8 @@
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <div class="diff-text">
-              <strong>Built from scratch for your store</strong>
-              <p>Every model is custom-built — not a template applied to your data. Your product catalog, seasonality, and customer behavior drive every decision in the architecture.</p>
+              <strong data-i18n="diff3.title">Built from scratch for your store</strong>
+              <p data-i18n="diff3.desc">Every model is custom-built — not a template applied to your data. Your product catalog, seasonality, and customer behavior drive every decision in the architecture.</p>
             </div>
           </div>
 
@@ -373,8 +373,8 @@
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <div class="diff-text">
-              <strong>A long-term relationship, not a one-time delivery</strong>
-              <p>The model retrains automatically each month. I'm not handing you a file and walking away — I'm a continuous partner invested in your store's growth.</p>
+              <strong data-i18n="diff4.title">A long-term relationship, not a one-time delivery</strong>
+              <p data-i18n="diff4.desc">The model retrains automatically each month. I'm not handing you a file and walking away — I'm a continuous partner invested in your store's growth.</p>
             </div>
           </div>
         </div>
@@ -386,7 +386,7 @@
   <section id="trial" aria-labelledby="trialTitle">
     <div class="section-container">
       <div class="trial-card reveal-scale">
-        <div class="trial-badge" aria-label="Zero risk offer">Zero Risk</div>
+        <div class="trial-badge" aria-label="Zero risk offer" data-i18n="trial.badge">Zero Risk</div>
         <div class="trial-glow" aria-hidden="true"></div>
 
         <div class="trial-content">
@@ -395,10 +395,10 @@
           </div>
 
           <h2 class="trial-headline" id="trialTitle">
-            First Month is a <span class="gradient-text">Free Trial</span><br />on Your Real Data
+            <span data-i18n="trial.title1">First Month is a</span> <span class="gradient-text" data-i18n="trial.title2">Free Trial</span><br /><span data-i18n="trial.title3">on Your Real Data</span>
           </h2>
 
-          <p class="trial-desc">
+          <p class="trial-desc" data-i18n="trial.desc">
             I don't believe in selling promises. That's why the first month is completely free —
             your model trains, your report is generated, and you see real results from your actual store data.
             <strong>Only then do you decide if you want to continue.</strong>
@@ -407,20 +407,20 @@
           <div class="trial-points">
             <div class="trial-point">
               <span class="trial-point-icon" aria-hidden="true">✦</span>
-              Real AI model trained on your actual sales history
+              <span data-i18n="trial.point1">Real AI model trained on your actual sales history</span>
             </div>
             <div class="trial-point">
               <span class="trial-point-icon" aria-hidden="true">✦</span>
-              Full forecast report — not a demo or sample output
+              <span data-i18n="trial.point2">Full forecast report — not a demo or sample output</span>
             </div>
             <div class="trial-point">
               <span class="trial-point-icon" aria-hidden="true">✦</span>
-              Zero commitment required to see your first results
+              <span data-i18n="trial.point3">Zero commitment required to see your first results</span>
             </div>
           </div>
 
           <a href="#contact" class="btn-primary btn-lg" id="trialCtaBtn">
-            <span>Start My Free Trial Month</span>
+            <span data-i18n="trial.cta">Start My Free Trial Month</span>
             <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
@@ -432,11 +432,11 @@
   <section id="dashboard-teaser" aria-labelledby="teaserTitle" style="background: var(--bg-0); position: relative; overflow: hidden;">
     <div style="position:absolute; inset:0; background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(64,112,255,0.04) 0%, transparent 70%); pointer-events:none;"></div>
     <div class="section-container" style="text-align:center;">
-      <div class="section-eyebrow reveal-fade">See It In Action</div>
+      <div class="section-eyebrow reveal-fade" data-i18n="teaser.eyebrow">See It In Action</div>
       <h2 class="section-title reveal-fade" id="teaserTitle">
-        See Exactly What<br /><span class="gradient-text">You'll Receive Each Month</span>
+        <span data-i18n="teaser.title1">See Exactly What</span><br /><span class="gradient-text" data-i18n="teaser.title2">You'll Receive Each Month</span>
       </h2>
-      <p class="section-sub reveal-fade">
+      <p class="section-sub reveal-fade" data-i18n="teaser.sub">
         Not a mockup. Not a screenshot. A live, interactive preview of the exact insights dashboard<br />your store would get — with real sample data.
       </p>
       <div class="reveal-scale" data-delay="100" style="max-width:900px; margin: 0 auto 2.5rem; border-radius:16px; border: 1px solid rgba(0,212,255,0.15); overflow:hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,212,255,0.06);">
@@ -500,7 +500,7 @@
         </div>
       </div>
       <a href="dashboard-preview.html" class="btn-primary btn-lg reveal-fade" data-delay="200" id="viewDashboardBtn">
-        <span>Explore the Full Dashboard Preview</span>
+        <span data-i18n="teaser.cta">Explore the Full Dashboard Preview</span>
         <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -510,11 +510,11 @@
   <section id="faq" aria-labelledby="faqTitle" style="background: var(--bg-1); position:relative;">
     <div style="position:absolute; top:0; left:0; right:0; height:1px; background: linear-gradient(90deg, transparent, rgba(0,212,255,0.18), transparent);"></div>
     <div class="section-container" style="text-align:center;">
-      <div class="section-eyebrow reveal-fade">Got Questions</div>
+      <div class="section-eyebrow reveal-fade" data-i18n="faq.eyebrow">Got Questions</div>
       <h2 class="section-title reveal-fade" id="faqTitle">
-        Everything You <span class="gradient-text">Actually Want to Know</span>
+        <span data-i18n="faq.title1">Everything You </span><span class="gradient-text" data-i18n="faq.title2">Actually Want to Know</span>
       </h2>
-      <p class="section-sub reveal-fade">
+      <p class="section-sub reveal-fade" data-i18n="faq.sub">
         Real answers to the real questions store owners ask before getting started.
       </p>
 
@@ -522,80 +522,80 @@
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" aria-controls="faq1-answer" id="faq1-btn">
-            <span>What format does my data need to be in?</span>
+            <span data-i18n="faq1.q">What format does my data need to be in?</span>
             <svg class="faq-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="faq-a" id="faq1-answer" role="region" aria-labelledby="faq1-btn" hidden>
+          <div class="faq-a" id="faq1-answer" role="region" aria-labelledby="faq1-btn" hidden data-i18n="faq1.a">
             A simple Excel (.xlsx) or CSV file exported from your platform is all I need. Shopify and WooCommerce both let you export sales data in one click. If your data is messy or incomplete, that's completely fine — data cleaning is part of the process, not your problem.
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" aria-controls="faq2-answer" id="faq2-btn">
-            <span>How long until I see my first results?</span>
+            <span data-i18n="faq2.q">How long until I see my first results?</span>
             <svg class="faq-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="faq-a" id="faq2-answer" role="region" aria-labelledby="faq2-btn" hidden>
+          <div class="faq-a" id="faq2-answer" role="region" aria-labelledby="faq2-btn" hidden data-i18n="faq2.a">
             Typically 3–5 business days from when I receive your sales data. You'll get your full first report — forecasts, product rankings, quantity recommendations, and seasonal insights — not a preview or partial output.
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" aria-controls="faq3-answer" id="faq3-btn">
-            <span>Is my sales data kept private and secure?</span>
+            <span data-i18n="faq3.q">Is my sales data kept private and secure?</span>
             <svg class="faq-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="faq-a" id="faq3-answer" role="region" aria-labelledby="faq3-btn" hidden>
+          <div class="faq-a" id="faq3-answer" role="region" aria-labelledby="faq3-btn" hidden data-i18n="faq3.a">
             Completely. Your data is used exclusively to train your model and generate your reports. It is never shared, sold, aggregated with other stores' data, or accessed by any third parties. Your store's data is your competitive advantage — and it stays that way.
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" aria-controls="faq4-answer" id="faq4-btn">
-            <span>What exactly is included in the free first month?</span>
+            <span data-i18n="faq4.q">What exactly is included in the free first month?</span>
             <svg class="faq-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="faq-a" id="faq4-answer" role="region" aria-labelledby="faq4-btn" hidden>
+          <div class="faq-a" id="faq4-answer" role="region" aria-labelledby="faq4-btn" hidden data-i18n="faq4.a">
             Everything. A fully trained AI model on your actual sales history, a complete monthly forecast report, top and bottom product rankings, exact quantity recommendations per product, and seasonal trend insights. This is not a demo — it's the real full output, on your real data. Zero cost, zero commitment required to see it.
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" aria-controls="faq5-answer" id="faq5-btn">
-            <span>How many products can the system handle?</span>
+            <span data-i18n="faq5.q">How many products can the system handle?</span>
             <svg class="faq-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="faq-a" id="faq5-answer" role="region" aria-labelledby="faq5-btn" hidden>
+          <div class="faq-a" id="faq5-answer" role="region" aria-labelledby="faq5-btn" hidden data-i18n="faq5.a">
             The system comfortably handles anywhere from 10 to 500+ product SKUs. The model architecture scales with your catalog size. Whether you carry 20 products or 300, it will produce per-product forecasts and recommendations.
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" aria-controls="faq6-answer" id="faq6-btn">
-            <span>What if my historical data only goes back a few months?</span>
+            <span data-i18n="faq6.q">What if my historical data only goes back a few months?</span>
             <svg class="faq-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="faq-a" id="faq6-answer" role="region" aria-labelledby="faq6-btn" hidden>
+          <div class="faq-a" id="faq6-answer" role="region" aria-labelledby="faq6-btn" hidden data-i18n="faq6.a">
             Even 3–6 months of data is enough to start seeing meaningful patterns and building a useful model. The forecasts will naturally improve over time as more months of data are collected and the model retrains. Starting now with limited data is better than waiting.
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" aria-controls="faq7-answer" id="faq7-btn">
-            <span>What does it cost after the free trial month?</span>
+            <span data-i18n="faq7.q">What does it cost after the free trial month?</span>
             <svg class="faq-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="faq-a" id="faq7-answer" role="region" aria-labelledby="faq7-btn" hidden>
+          <div class="faq-a" id="faq7-answer" role="region" aria-labelledby="faq7-btn" hidden data-i18n="faq7.a">
             Pricing is tailored to your store — based on catalog size, reporting frequency, and how much ongoing support and retraining you need. We'll agree on pricing together after you've seen the trial results, so you make the decision with full information. No surprise invoices.
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
           <button class="faq-q" aria-expanded="false" aria-controls="faq8-answer" id="faq8-btn">
-            <span>Can I stop at any time after the trial?</span>
+            <span data-i18n="faq8.q">Can I stop at any time after the trial?</span>
             <svg class="faq-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="faq-a" id="faq8-answer" role="region" aria-labelledby="faq8-btn" hidden>
+          <div class="faq-a" id="faq8-answer" role="region" aria-labelledby="faq8-btn" hidden data-i18n="faq8.a">
             Absolutely. If the trial results don't impress you, there's no obligation to continue — and no awkward conversation to have. The whole point of the free trial is to make the decision easy and risk-free. You should only continue if the results clearly justify it.
           </div>
         </div>
@@ -607,73 +607,22 @@
   <!-- ═══════════════════════════════════════ CONTACT ═════════════ -->
   <section id="contact" aria-labelledby="contactTitle">
     <div class="section-container">
-      <div class="contact-inner">
+      <div class="contact-centered reveal-fade" style="text-align: center; max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px;">
+        
+        <div class="section-eyebrow" data-i18n="contact.eyebrow">Let's Talk</div>
+        
+        <h2 class="section-title" id="contactTitle" style="text-align: center;">
+          <span data-i18n="contact.title1">Ready to Stop</span> <span class="gradient-text" data-i18n="contact.title2">Guessing?</span>
+        </h2>
+        
+        <p class="section-sub" data-i18n="contact.sub" style="margin: 0 auto; text-align: center;">
+          If you are interested in building your own System, send an Email to this email:
+        </p>
 
-        <div class="contact-left reveal-fade">
-          <div class="section-eyebrow">Let's Talk</div>
-          <h2 class="section-title" id="contactTitle">
-            Ready to Stop<br /><span class="gradient-text">Guessing?</span>
-          </h2>
-          <p class="section-sub" style="text-align:left; max-width: 440px;">
-            Tell me about your store and what you're struggling with. 
-            I'll get back to you within 24 hours and we'll talk through how the system can work for your business.
-          </p>
-
-          <div class="contact-details">
-            <a href="mailto:ahmedmmohamed052@gmail.com" class="contact-email" aria-label="Send email directly to Ahmed">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              ahmedmmohamed052@gmail.com
-            </a>
-            <p class="contact-response">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              Typical response time: within 24 hours
-            </p>
-          </div>
-        </div>
-
-        <div class="contact-right reveal-scale" data-delay="100">
-          <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
-            <div class="form-group">
-              <label for="contactName" class="form-label">Your Name</label>
-              <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g. Sarah Johnson" autocomplete="name" required />
-            </div>
-
-            <div class="form-group">
-              <label for="contactEmail" class="form-label">Your Email</label>
-              <input type="email" id="contactEmail" name="email" class="form-input" placeholder="you@yourstore.com" autocomplete="email" required />
-            </div>
-
-            <div class="form-group">
-              <label for="contactStore" class="form-label">Your Store Platform</label>
-              <select id="contactStore" name="store" class="form-input form-select" required>
-                <option value="" disabled selected>Select your platform</option>
-                <option value="Shopify">Shopify</option>
-                <option value="WooCommerce">WooCommerce</option>
-                <option value="Amazon">Amazon Seller</option>
-                <option value="Custom">Custom / In-House</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="contactMessage" class="form-label">Tell Me About Your Store & Challenge</label>
-              <textarea id="contactMessage" name="message" class="form-input form-textarea" rows="5" placeholder="e.g. I run a Shopify store with ~200 products. My biggest problem is knowing how much stock to carry going into each season..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn-primary btn-full" id="contactSubmitBtn">
-              <span class="btn-text">Send My Message</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="btn-icon"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-
-            <div class="form-success" id="formSuccess" role="alert" aria-live="polite" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,4 12,14.01 9,11.01" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <div>
-                <strong>Email client opened!</strong>
-                <p>Ahmed will get back to you within 24 hours.</p>
-              </div>
-            </div>
-          </form>
-        </div>
+        <a href="mailto:ahmedmmohamed052@gmail.com" class="btn-primary" style="font-size: 1.1rem; padding: 14px 28px; display: inline-flex; flex-direction: row; align-items: center; justify-content: center; width: auto; margin-top: 10px; direction: ltr;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right: 10px;" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-family: monospace;">ahmedmmohamed052@gmail.com</span>
+        </a>
 
       </div>
     </div>
@@ -688,12 +637,13 @@
         </span>
         <span class="logo-text">ForecastIQ</span>
       </div>
-      <p class="footer-tagline">AI-Powered Sales Forecasting · Built for Your Store</p>
+      <p class="footer-tagline" data-i18n="footer.tagline">AI-Powered Sales Forecasting · Built for Your Store</p>
       <a href="mailto:ahmedmmohamed052@gmail.com" class="footer-email">ahmedmmohamed052@gmail.com</a>
-      <p class="footer-copy">© 2025 ForecastIQ by Ahmed Mohamed. All rights reserved.</p>
+      <p class="footer-copy" data-i18n="footer.copy">© 2025 ForecastIQ by Ahmed Mohamed. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="main.js"></script>
+  <script src="lang.js"></script>
 </body>
 </html>

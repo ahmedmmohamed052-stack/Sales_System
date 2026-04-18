@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -665,10 +665,10 @@
 <body>
 
   <!-- ── Demo Banner ───────────────────────────────────────────── -->
-  <div class="demo-banner" role="banner" aria-label="Demo notice">
-    <strong>📊 Live Dashboard Preview</strong>
-    — This is a sample of what your monthly insights report looks like.
-    <a href="index.html#contact">Get yours built → start the free trial</a>
+  <div class="demo-banner" role="banner" aria-label="Demo notice" id="demoBanner">
+    <strong>📊 <span id="demoBannerStrong">Live Dashboard Preview</span></strong>
+    — <span id="demoBannerText">This is a sample of what your monthly insights report looks like.</span>
+    <a href="index.html#contact" id="demoBannerLink">Get yours built → start the free trial</a>
   </div>
 
   <!-- ── Header ────────────────────────────────────────────────── -->
@@ -677,7 +677,7 @@
       <div class="db-logo-icon" aria-hidden="true">
         <svg width="18" height="18" viewBox="0 0 28 28" fill="none"><polyline points="4,20 10,13 16,16 24,7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="24" cy="7" r="2.5" fill="#F0A500"/></svg>
       </div>
-      <span class="db-logo-text">Sales Insights</span>
+      <span class="db-logo-text" data-i18n="db.logoText">Sales Insights</span>
     </a>
 
     <div class="db-header-right">
@@ -686,7 +686,7 @@
         <span class="arrow">→</span>
         <span>2025-04</span>
       </div>
-      <a href="index.html" class="db-back-btn" aria-label="Back to ForecastIQ main page">
+      <a href="index.html" class="db-back-btn" aria-label="Back to ForecastIQ main page" data-i18n="db.backBtn">
         ← Back to Main Page
       </a>
     </div>
@@ -699,29 +699,29 @@
     <div class="kpi-row" role="region" aria-label="Key performance indicators">
 
       <div class="kpi-card" role="article" aria-label="Overall change metric">
-        <div class="kpi-label">Overall Change</div>
+        <div class="kpi-label" data-i18n="db.kpi1.label">Overall Change</div>
         <div class="kpi-value negative" id="kpiChange">-6.4%</div>
-        <div class="kpi-sub">across all products</div>
+        <div class="kpi-sub" data-i18n="db.kpi1.sub">across all products</div>
       </div>
 
       <div class="kpi-card" role="article" aria-label="Historical units metric">
-        <div class="kpi-label">Historical Units</div>
+        <div class="kpi-label" data-i18n="db.kpi2.label">Historical Units</div>
         <div class="kpi-value neutral" id="kpiHist">125</div>
-        <div class="kpi-sub">last 3 months</div>
+        <div class="kpi-sub" data-i18n="db.kpi2.sub">last 3 months</div>
       </div>
 
       <div class="kpi-card" role="article" aria-label="Forecast units metric">
-        <div class="kpi-label">Forecast Units</div>
+        <div class="kpi-label" data-i18n="db.kpi3.label">Forecast Units</div>
         <div class="kpi-value positive" id="kpiForecast">117</div>
-        <div class="kpi-sub">next 3 months</div>
+        <div class="kpi-sub" data-i18n="db.kpi3.sub">next 3 months</div>
       </div>
 
       <div class="kpi-card" role="article" aria-label="Products tracked metric">
-        <div class="kpi-label">Products</div>
+        <div class="kpi-label" data-i18n="db.kpi4.label">Products</div>
         <div class="kpi-value products" id="kpiProducts">5</div>
         <div class="kpi-sub">
-          <span class="up">▲2 up</span>
-          <span class="down">▼3 down</span>
+          <span class="up" data-i18n="db.kpi4.up">▲2 up</span>
+          <span class="down" data-i18n="db.kpi4.down">▼3 down</span>
         </div>
       </div>
 
@@ -731,26 +731,26 @@
     <div class="db-panel chart-panel" role="region" aria-labelledby="chartPanelTitle">
       <div class="db-panel-header">
         <div class="db-panel-icon" aria-hidden="true">📊</div>
-        <h2 class="db-panel-title" id="chartPanelTitle">Historical vs Forecast — Avg Monthly Units</h2>
+        <h2 class="db-panel-title" id="chartPanelTitle" data-i18n="db.chart.title">Historical vs Forecast — Avg Monthly Units</h2>
       </div>
       <div class="db-panel-body">
         <div class="chart-legend" aria-label="Chart legend" role="list">
           <div class="legend-item" role="listitem">
             <div class="legend-dot" style="background:#6B41DC;" aria-hidden="true"></div>
-            Historical Avg (last 3mo)
+            <span data-i18n="db.legend.hist">Historical Avg (last 3mo)</span>
           </div>
           <div class="legend-item gainers" role="listitem" aria-label="Top 5 gainers: teal bars">
             <div class="legend-dot" style="background:#13C48C;" aria-hidden="true"></div>
-            Forecast Avg (next 3mo)
+            <span data-i18n="db.legend.fcst">Forecast Avg (next 3mo)</span>
           </div>
           <div class="legend-item drops" role="listitem" aria-label="Top 5 drops: red bars">
             <div class="legend-dot" style="background:#C04848;" aria-hidden="true"></div>
-            Forecast (drops)
+            <span data-i18n="db.legend.drop">Forecast (drops)</span>
           </div>
         </div>
         <div class="chart-annotations" aria-hidden="true">
-          <span class="chart-ann gainer">Top 5 Gainers</span>
-          <span class="chart-ann drop">Top 5 Drops</span>
+          <span class="chart-ann gainer" data-i18n="db.ann.gainers">Top 5 Gainers</span>
+          <span class="chart-ann drop" data-i18n="db.ann.drops">Top 5 Drops</span>
         </div>
         <div class="chart-wrap">
           <canvas id="forecastChart" role="img" aria-label="Grouped bar chart comparing historical and forecast average monthly units per product"></canvas>
@@ -762,13 +762,13 @@
     <div class="db-panel topbot-panel" role="region" aria-labelledby="topbotTitle">
       <div class="db-panel-header">
         <div class="db-panel-icon" aria-hidden="true">🏆</div>
-        <h2 class="db-panel-title" id="topbotTitle">Top & Bottom Products</h2>
+        <h2 class="db-panel-title" id="topbotTitle" data-i18n="db.topbot.title">Top &amp; Bottom Products</h2>
       </div>
       <div class="db-panel-body">
         <div class="topbot-grid">
 
           <div class="topbot-col">
-            <div class="topbot-group-label gainers">Biggest Gainers</div>
+            <div class="topbot-group-label gainers" data-i18n="db.topbot.gainers">Biggest Gainers</div>
             <ul class="topbot-list" role="list" aria-label="Biggest gainers">
               <li class="topbot-row">
                 <span class="topbot-product">P003</span>
@@ -784,7 +784,7 @@
           <div class="topbot-divider" aria-hidden="true"></div>
 
           <div class="topbot-col">
-            <div class="topbot-group-label drops">Biggest Drops</div>
+            <div class="topbot-group-label drops" data-i18n="db.topbot.drops">Biggest Drops</div>
             <ul class="topbot-list" role="list" aria-label="Biggest drops">
               <li class="topbot-row">
                 <span class="topbot-product">P002</span>
@@ -808,7 +808,7 @@
     <div class="db-panel recs-panel" role="region" aria-labelledby="recsTitle">
       <div class="db-panel-header">
         <div class="db-panel-icon" aria-hidden="true">🛒</div>
-        <h2 class="db-panel-title" id="recsTitle">Purchase Recommendations</h2>
+        <h2 class="db-panel-title" id="recsTitle" data-i18n="db.recs.title">Purchase Recommendations</h2>
       </div>
       <div class="db-panel-body">
         <ul class="recs-list" role="list" aria-label="Purchase recommendations per product">
@@ -817,7 +817,7 @@
             <div class="rec-icon" aria-hidden="true">📈</div>
             <div class="rec-content">
               <div class="rec-product">P003</div>
-              <p class="rec-desc">Buy more — demand is expected to increase. Order <strong>+1 additional unit/month</strong> above your usual quantity.</p>
+              <p class="rec-desc" data-i18n="db.rec1.desc">Buy more — demand is expected to increase. Order <strong>+1 additional unit/month</strong> above your usual quantity.</p>
               <div class="rec-tags">
                 <span class="rec-tag positive">+1 units/mo</span>
                 <span class="rec-tag positive">+10.6% increase</span>
@@ -829,7 +829,7 @@
             <div class="rec-icon" aria-hidden="true">📈</div>
             <div class="rec-content">
               <div class="rec-product">P005</div>
-              <p class="rec-desc">Buy more — demand is expected to increase. Order <strong>+0.3 additional units/month</strong> above your usual quantity.</p>
+              <p class="rec-desc" data-i18n="db.rec2.desc">Buy more — demand is expected to increase. Order <strong>+0.3 additional units/month</strong> above your usual quantity.</p>
               <div class="rec-tags">
                 <span class="rec-tag positive">+0.3 units/mo</span>
                 <span class="rec-tag positive">+5.2% increase</span>
@@ -841,7 +841,7 @@
             <div class="rec-icon" aria-hidden="true">📉</div>
             <div class="rec-content">
               <div class="rec-product">P001</div>
-              <p class="rec-desc">Buy less — demand is expected to drop. Reduce orders by <strong>~1.3 units/month</strong> to avoid overstock.</p>
+              <p class="rec-desc" data-i18n="db.rec3.desc">Buy less — demand is expected to drop. Reduce orders by <strong>~1.3 units/month</strong> to avoid overstock.</p>
               <div class="rec-tags">
                 <span class="rec-tag negative">-1.3 units/mo</span>
                 <span class="rec-tag negative">-13.1% decrease</span>
@@ -853,7 +853,7 @@
             <div class="rec-icon" aria-hidden="true">📉</div>
             <div class="rec-content">
               <div class="rec-product">P004</div>
-              <p class="rec-desc">Buy less — demand is expected to drop. Reduce orders by <strong>~1.3 units/month</strong> to avoid overstock.</p>
+              <p class="rec-desc" data-i18n="db.rec4.desc">Buy less — demand is expected to drop. Reduce orders by <strong>~1.3 units/month</strong> to avoid overstock.</p>
               <div class="rec-tags">
                 <span class="rec-tag negative">-1.3 units/mo</span>
                 <span class="rec-tag negative">-13.1% decrease</span>
@@ -865,7 +865,7 @@
             <div class="rec-icon" aria-hidden="true">📉</div>
             <div class="rec-content">
               <div class="rec-product">P002</div>
-              <p class="rec-desc">Buy less — demand is expected to drop. Reduce orders by <strong>~1.4 units/month</strong> to avoid overstock.</p>
+              <p class="rec-desc" data-i18n="db.rec5.desc">Buy less — demand is expected to drop. Reduce orders by <strong>~1.4 units/month</strong> to avoid overstock.</p>
               <div class="rec-tags">
                 <span class="rec-tag negative">-1.4 units/mo</span>
                 <span class="rec-tag negative">-17.6% decrease</span>
@@ -881,20 +881,20 @@
     <div class="db-panel table-panel" role="region" aria-labelledby="tableTitle">
       <div class="db-panel-header">
         <div class="db-panel-icon" aria-hidden="true">📋</div>
-        <h2 class="db-panel-title" id="tableTitle">All Products Breakdown</h2>
+        <h2 class="db-panel-title" id="tableTitle" data-i18n="db.table.title">All Products Breakdown</h2>
       </div>
       <div class="db-panel-body" style="padding: 0;">
         <div style="overflow-x: auto;">
           <table class="db-table" aria-label="Full product breakdown with historical and forecast data">
             <thead>
               <tr>
-                <th scope="col">Product ID</th>
-                <th scope="col">Hist. Total</th>
-                <th scope="col">Hist. Avg/mo</th>
-                <th scope="col">Forecast Total</th>
-                <th scope="col">Forecast Avg/mo</th>
-                <th scope="col">Change</th>
-                <th scope="col">Trend</th>
+                <th scope="col" data-i18n="db.th.product">Product ID</th>
+                <th scope="col" data-i18n="db.th.histTotal">Hist. Total</th>
+                <th scope="col" data-i18n="db.th.histAvg">Hist. Avg/mo</th>
+                <th scope="col" data-i18n="db.th.fcstTotal">Forecast Total</th>
+                <th scope="col" data-i18n="db.th.fcstAvg">Forecast Avg/mo</th>
+                <th scope="col" data-i18n="db.th.change">Change</th>
+                <th scope="col" data-i18n="db.th.trend">Trend</th>
               </tr>
             </thead>
             <tbody>
@@ -905,7 +905,7 @@
                 <td>30</td>
                 <td>10</td>
                 <td class="change-pos">+10.6%</td>
-                <td><span class="trend-badge up">▲ Increase</span></td>
+                <td><span class="trend-badge up" data-i18n="db.trend.up">▲ Increase</span></td>
               </tr>
               <tr>
                 <td class="product-id">P005</td>
@@ -914,7 +914,7 @@
                 <td>14</td>
                 <td>4.6</td>
                 <td class="change-pos">+5.2%</td>
-                <td><span class="trend-badge up">▲ Increase</span></td>
+                <td><span class="trend-badge up" data-i18n="db.trend.up">▲ Increase</span></td>
               </tr>
               <tr>
                 <td class="product-id">P001</td>
@@ -923,7 +923,7 @@
                 <td>27</td>
                 <td>9</td>
                 <td class="change-neg">-13.1%</td>
-                <td><span class="trend-badge down">▼ Decrease</span></td>
+                <td><span class="trend-badge down" data-i18n="db.trend.down">▼ Decrease</span></td>
               </tr>
               <tr>
                 <td class="product-id">P004</td>
@@ -932,7 +932,7 @@
                 <td>25</td>
                 <td>8.4</td>
                 <td class="change-neg">-13.1%</td>
-                <td><span class="trend-badge down">▼ Decrease</span></td>
+                <td><span class="trend-badge down" data-i18n="db.trend.down">▼ Decrease</span></td>
               </tr>
               <tr>
                 <td class="product-id">P002</td>
@@ -941,7 +941,7 @@
                 <td>21</td>
                 <td>6.9</td>
                 <td class="change-neg">-17.6%</td>
-                <td><span class="trend-badge down">▼ Decrease</span></td>
+                <td><span class="trend-badge down" data-i18n="db.trend.down">▼ Decrease</span></td>
               </tr>
             </tbody>
           </table>
@@ -952,10 +952,10 @@
     <!-- CTA Strip -->
     <div class="db-cta-strip" role="complementary" aria-label="Call to action">
       <div class="db-cta-text">
-        <h3>This is what your store's data would look like.</h3>
-        <p>The first month is free — no commitment, no risk. Get your real report built on your actual sales data.</p>
+        <h3 data-i18n="db.cta.h3">This is what your store's data would look like.</h3>
+        <p data-i18n="db.cta.p">The first month is free — no commitment, no risk. Get your real report built on your actual sales data.</p>
       </div>
-      <a href="index.html#contact" class="db-cta-btn" id="dashboardCtaBtn">
+      <a href="index.html#contact" class="db-cta-btn" id="dashboardCtaBtn" data-i18n="db.cta.btn">
         Start My Free Trial →
       </a>
     </div>
@@ -1077,5 +1077,6 @@
 
   })();
   </script>
+  <script src="lang.js"></script>
 </body>
 </html>
