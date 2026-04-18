@@ -386,7 +386,7 @@
       btn.setAttribute('aria-pressed', 'false');
       btn.innerHTML = lang === 'en'
         ? '<span class="lang-flag">🇬🇧</span><span>EN</span>'
-        : '<span class="lang-flag">🇸🇦</span><span>عربي</span>';
+        : '<span class="lang-flag">🇪🇬</span><span>عربي</span>';
       btn.addEventListener('click', () => {
         setLang(lang);
         applyTranslations(lang);
